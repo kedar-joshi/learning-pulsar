@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Setting up Spring Boot as project parent -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.5</version>
+
+		<relativePath />
+	</parent>
+
+	<groupId>io.workingtheory.playground</groupId>
+	<artifactId>learning-pulsar</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<!-- This module will be packaged as POM -->
+	<packaging>pom</packaging>
+
+	<name>Learning Pulsar</name>
+	<description>Reference project for learning Apache Pulsar</description>
+
+	<!-- Project modules -->
+	<modules>
+		<module>client-playground</module>
+	</modules>
+
+	<!-- Project properties -->
+	<properties>
+
+		<!-- Logging -->
+		<log4j.version>2.14.1</log4j.version>
+		<slf4j.version>1.7.32</slf4j.version>
+
+		<!-- Apache commons -->
+		<apache.commons-lang.version>3.12.0</apache.commons-lang.version>
+		<apache.commons-text.version>1.6</apache.commons-text.version>
+		<apache.pulsar.version>2.8.1</apache.pulsar.version>
+
+		<!-- Frameworks -->
+		<spring.framework.version>5.3.10</spring.framework.version>
+
+		<!-- Testing -->
+		<junit.jupiter.version>5.8.1</junit.jupiter.version>
+
+		<!-- Application servers -->
+		<tomcat.version>9.0.53</tomcat.version>
+
+		<!-- Plugins -->
+		<maven.compiler-plugin.version>3.8.1</maven.compiler-plugin.version>
+		<maven.surefire-plugin.version>2.22.2</maven.surefire-plugin.version>
+		<maven.failsafe-plugin.version>2.22.2</maven.failsafe-plugin.version>
+		<maven.war-plugin.version>3.3.2</maven.war-plugin.version>
+
+		<!-- Spring boot overrides -->
+		<log4j2.version>${log4j.version}</log4j2.version>
+		<commons-lang3.version>${apache.commons-lang.version}</commons-lang3.version>
+		<spring-framework.version>${spring.framework.version}</spring-framework.version>
+		<junit-jupiter.version>${junit.jupiter.version}</junit-jupiter.version>
+
+		<!-- Spring Boot plugin overrides -->
+		<maven-compiler-plugin.version>${maven.compiler-plugin.version}</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>${maven.surefire-plugin.version}</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>${maven.failsafe-plugin.version}</maven-failsafe-plugin.version>
+		<maven-war-plugin.version>${maven.war-plugin.version}</maven-war-plugin.version>
+
+		<!-- Compiler -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<java.version>17</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+	</properties>
+
+	<!-- Build and plugin configuration -->
+	<build>
+
+		<!-- Managed plugin configuration -->
+		<pluginManagement>
+			<plugins>
+
+
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+	<!-- Managed dependency configuration -->
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- Apache Pulsar -->
+			<dependency>
+				<groupId>org.apache.pulsar</groupId>
+				<artifactId>pulsar-client</artifactId>
+				<version>${apache.pulsar.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+</project>
